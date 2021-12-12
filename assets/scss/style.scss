@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+div {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@mixin fontStyle ($family,$style,$weight, $size, $lheight, $color) {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $lheight;
+    color: $color;
+}
+.header {
+    background-color: #635854;
+    &-content {
+        max-width: 1280px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 9px;
+        padding-bottom: 13px;
+        margin: auto;
+        &-logo{
+            padding-top: 12px;
+        }
+        &-nav {
+            max-width: 671px;
+            width: 100%;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        @include fontStyle(Roboto,normal, normal, 16px, 19px, #FFFFFF);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        &-phone {
+            @include fontStyle(Roboto,normal, normal, 16\4px, 16px, #FFFFFF);
+            a {
+                text-decoration: none;
+                @include fontStyle(Roboto,normal, bold, 17px, 20px, #FFFFFF);
+            }
+        }
+    }
+}
